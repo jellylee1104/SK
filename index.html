@@ -29,11 +29,19 @@
         width: 100%;
     }
 
-   .info{
-       height: 90%;
+    h2{
+        font-size: 22px;
+    }
+
+    .hide{
+        visibility: hidden;
+    }
+
+    .info{
+        height: 90%;
         margin-top: 20px;
         margin-bottom: 30px;
-        overflow: scoll;
+        overflow: hidden visible;
     }
 
     #RAhide, #RBhide, #RChide, #RDhide, #REhide, #RFhide{
@@ -90,7 +98,7 @@
                 <li>
                     <a href="#RD">
                     <h2>D</h2>
-                    <p>Chief</p>
+                    <p>Chef</p>
                     </a>
                 </li>
                 <li>
@@ -137,8 +145,8 @@
     <div data-role="page" id='RAscript' data-theme = "b">
         <div data-role="header" class="header">
             <h1>Role A - Firefighter</h1>
-            <a href="#content" class="ui-btn ui-icon-carat-l ui-btn-icon-left" >Back</a>
-            <a href="#evidence" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >Next</a>
+            <a href="#content" class="ui-btn ui-icon-carat-l ui-btn-icon-left hide" >Back</a>
+            <a href="#instruction1" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >Next</a>
         </div>
         <div role="main" class="ui-content info" >
           <h5>Your profile:</h5>
@@ -190,8 +198,8 @@
     <div data-role="page" id='RBscript' data-theme = "b">
         <div data-role="header" class="header">
             <h1>Role B - Psychologist</h1>
-            <a href="#content" class="ui-btn ui-icon-carat-l ui-btn-icon-left" >Back</a>
-            <a href="#evidence" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >Next</a>
+            <a href="#content" class="ui-btn ui-icon-carat-l ui-btn-icon-left hide" >Back</a>
+            <a href="#instruction1" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >Next</a>
         </div>
         <div role="main" class="ui-content info" >
           <h5>Your profile:</h5>
@@ -242,8 +250,8 @@
     <div data-role="page" id='RCscript' data-theme = "b">
         <div data-role="header" class="header">
             <h1>Role C - Dancer</h1>
-            <a href="#content" class="ui-btn ui-icon-carat-l ui-btn-icon-left" >Back</a>
-            <a href="#evidence" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >Next</a>
+            <a href="#content" class="ui-btn ui-icon-carat-l ui-btn-icon-left hide" >Back</a>
+            <a href="#instruction1" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >Next</a>
         </div>
         <div role="main" class="ui-content info" >
           <h5>Your profile:</h5>
@@ -272,14 +280,14 @@
     <!--RD password page-->
        <div data-role="page" id="RD" data-theme = "b">
         <div data-role="header" class="header">
-            <h1>Role D - Chief</h1>
+            <h1>Role D - Chef</h1>
         </div>
 
         <div role="main" class="ui-content info" >
             <h3 class="RDpass">Type your password:</h3>
-            <input type="number" class="RApass" id="RApassword">
-            <button class="ui-btn" class="RApass" onclick="RAsub()">submit</button>
-            <a href="#RAscript" class="ui-btn" data-transition="pop" id="RAhide">Next</a>
+            <input type="number" class="RDpass" id="RDpassword">
+            <button class="ui-btn" class="RApass" onclick="RDsub()">submit</button>
+            <a href="#RDscript" class="ui-btn" data-transition="pop" id="RDhide">Next</a>
             <a href="#content" class="ui-btn" data-transition="pop">Back to Home</a>
         </div>
 
@@ -290,31 +298,32 @@
     <!--End of RD password page-->
 
     <!--RD script page-->
-    <div data-role="page" id='RAscript' data-theme = "b">
+    <div data-role="page" id='RDscript' data-theme = "b">
         <div data-role="header" class="header">
-            <h1>Role A - Firefighter</h1>
-            <a href="#content" class="ui-btn ui-icon-carat-l ui-btn-icon-left" >Back</a>
-            <a href="#evidence" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >Next</a>
+            <h1>Role D - Chef</h1>
+            <a href="#content" class="ui-btn ui-icon-carat-l ui-btn-icon-left hide" >Back</a>
+            <a href="#instruction1" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >Next</a>
         </div>
         <div role="main" class="ui-content info" >
           <h5>Your profile:</h5>
-          <p>Profession: Firefighter <br>Age: 25 <br>Friend: B, D, E, “Stephanie” <br>Relationship: in love with D</p>
+          <p>Profession: Chef <br>Age: 25 <br>Friend: A, B, E, “Stephanie” <br>Relationship: in love with A
+          </p>
           <h5>Story:</h5>
-          <p>The story begins in secondary 3; you’re in the friend group with roles B, D, E and Glady (Glady is another girl who is already dead). You guys are excellent friends. However, the nightmare just began. One day you guys find out that Glady is being sad and constantly crying, but she didn’t tell you guys why, and you start to see some pain in her body. You decide to inform B and persuade B to talk to her as B and Glady have a relationship. Yet you were told that Glady is drowning on the next day in the news, and you are being guilty, blaming yourself; you should ask her when you find out the pain. The odd thing is that the news reported that when they find Glady, there is a water drop painted on her face with purple lipstick. By that time, you only think that she is being sad and has decided to suicide. You swear that you will be a person that can save people, and you become a firefighter. You and D had a crush in secondary 5 and decided to have a relationship a year later. Once, on a mission, you met Stephanie, saved her life, and you and D started being friends with her as you think she is miserable. She told us that she is studying in the same secondary school in the same year but left in secondary 3. Then, Stephanie joined a friend group including you, B and E. E and Stephanie soon have a relationship. In one gathering with D and Stephanie, when she went to the toilet and didn’t take her phone with her, you and D saw C send a message to Stephanie. The message says, “Don’t you dare threaten me; I will still pursue your brother! If you ever let him and the whole world see those videos, I will tell the whole world that you killed Glady!”. You and D are so shocked; however, you didn’t fully trust this message, you took a picture and decide to ask her later. On the next day, you know she is an accountant and went to her office. You saw her bulling F but according to what she told you she said she is the one who is being bullied. You are so angry, but you still decide to continue to pretend to be friends with Stephanie, but decide to murder her together in the gathering two weeks later as you are filled with anger. Moreover, as E is having a relationship with Stephanie, so you guys start alienating her as you guys don’t want her to suffer in pain and do the revenge yourselves, which suggests that the friend group only remain A, B and D.</p>
-          <p>On the day of gathering with the teachers in your secondary school, you and D decided to murder Stephanie by hanging her up pretend that she is suicide and that she is fear when she looks at the words on the toilet door (such as writing “YOU KILLED ME!”, “YOU DON’T DESERVE WHAT YOU HAVE NOW!”). And draw a water drop on her face using purple lipstick, just like how Glady dead.        </p>
+          <p>The story begins in secondary 3; you’re in the friend group with roles A, B, E and Glady (Glady is another girl who is already dead). You guys are excellent friends; however, the nightmare just began. One day you guys find out Glady is sad and constantly crying, but she doesn’t tell you why. Yet you were told that Glady is drowning in the news the next day. The odd thing is that the information reported that when they find Glady, there is a water drop painted on her face with purple lipstick. By that time, you only think that she is being sad and decides to suicide. You and role A have a crush in secondary 5 and decided to have a relationship a year later. One day, A told you that she met Stephanie on a mission and said she saved her life. She told us that she is studying in the same secondary school in the same year but left in secondary 3. A like her so much that you and A started to befriend her. Then, Stephanie joined the friend group including you, B, E and F. E and Stephanie soon have a relationship; however, in one gathering with A and Stephanie, when she went to the toilet and didn’t take her phone with her, you and D saw C send a message to Stephanie. The message says, “Don’t you dare threaten me; I will still pursue your brother! If you ever let him and the whole world see those videos, I will tell the whole world that you killed Glady!”. You and A are so shocked and decide to continue pretending to be friends with Stephanie. She is mad and decides to murder her together in the gathering two weeks later as she is filled with anger, and you will need to leave her alone. Moreover, as role E is having a relationship with Stephanie, you guys start alienating her. You guys don’t want her to suffer in pain and do the revenge yourselves which suggest that the friend group only remain A, B and D.</p>
+          <p>On the day of gathering with the teachers in your secondary school, you and A decided to murder Stephanie by hanging her up pretend that she is suicide and that she is fear when she looks at the words in the toilet door (such as writing “YOU KILLED ME!”, “YOU DON’T DESERVE WHAT YOU HAVE NOW!”).</p>
           <h5>Timeline:</h5>
           <p>The gathering starts at 17:45</p>
-          <p>16:57 – you and D arrived at the school and started playing basketball. Then you saw E & Stephanie come and go to the hall directly. Next came C and joined you to play basketball. After a while, F came and went to the hall; finally came B and she joined the basketball team to play.        </p>
-          <p>17:45 – The gathering starts and all of you go to the hall to watch the performance.</p>
-          <p>19:00 – End performance and a break for students and teachers to chat. You walked with D to find teachers.        </p>
-          <p>19:12 – You separated from D and went to the toilet yourself to prepare for the murder. You take out the rope you prepared and find a space to hang it up; you put it in the ceiling of the last toilet compartment. At around 19:15, you did this preparation and ran into B in front of the toilet.        </p>
-          <p>19:16 – You find D and continue to talk to teachers together.        </p>
-          <p>19:21 - You separate from D again as she says she wants to go to the toilet; you start wondering and after around 2 minutes, hear Stephanie tell E that she is not feeling well and she is going to the toilet, knowing that she is going by herself and she knows this may be one opportunity. However, you decided to wait for D.        </p>
-          <p>19:25 – D returned and told you that it will be obvious if she goes to the toilet again now, and you guys decided to stick to your original plan.</p>
-          <p>19:35 – You guys find out that Stephanie is still in the toilet and you decide to kill her now. When you entered the toilet, you saw her lying on the toilet seat with her eyes closed. However, D still stuns Stephanie with the stun spray and you guys hang her up by the rope together. You have completed the murder. While D pull out all the liquid in the stun spray and filled with water, you write words on the toilet door. (“YOU KILLED ME!”, “YOU DON’T DESERVE WHAT YOU HAVE NOW!”) and draw a water drop on her face using purple lipstick. You then throw the whiteboard pen and the lipstick into the bin.</p>
-          <p>19:37 – You guys went out of the toilet and found a teacher to chat. In the meantime, you saw F go into the toilet; however, she went out so quickly and didn’t scream or say that she saw Stephanie hanging up. Instead, she pretends nothing has happened.</p>
-          <p>19:45 – Dinner time starts, you and D go back to the hall and notice that everyone except Stephanie arrived already.</p>
-          <p>19:50 – Stephanie is still not here and E said she hasn’t found her since 19:25 and said she might not feel well. We all go and find her, and finally find that she is hung up in the toilet with words on the door.</p>
+          <p>16:57 – You and A arrived at the school and start playing basketball. Then you saw E & Stephanie came and went to the hall directly. Next came C and joined you to play basketball. After a while, F came and went to the hall too; finally came B and she joined the basketball team to play.</p>
+          <p>17:45 – The gathering starts and all of you went to the hall for watching performance.</p>
+          <p>19:00 – End performance and a break between for students and teachers to chat. You walked with D to find teachers.</p>
+          <p>19:12 – You separate with A as she prepare for the murder by putting a rope to hang up in the ceiling</p>
+          <p>19:16 – She went back and continues to talk to teachers together.</p>
+          <p>19:21 - You separate with A again as you need to go to the toilet.</p>
+          <p>19:25 – You saw F and went out from the toilet together. You saw Stephanie ran into the toilet, seems that she is not feeling well.</p>
+          <p>19:35 – You guys find out that Stephanie is still in the toilet and you guys decided to kill her now. When you went into the toilet, you saw her lying on the toilet seat with her eyes close. You stun Stephanie by the stun spray and you guys hang her up by the rope together. You have completed the murderer, while A write words in the toilet door. (“YOU KILLED ME!”, “YOU DON’T DESRIVE WHAT YOU HAVE NOW!”) and draw a water drop on her face using a purple lipstick you pull out all the liquid in the stun spray and filled with water. She then throw the whiteboard pen and the lipstick into the bin.</p>
+          <p>19:37 – You guys went out the toilet and find a teacher to chat, in the meantime you saw F went into the toilet, however, she went out so quickly and she didn’t scream out and said that she saw Stephanie hanging up. Instead, she pretends nothing had happened.</p>
+          <p>19:45 – Dinner time starts, you and A went back to the hall and notice that everyone except Stephanie arrived already.</p>
+          <p>19:50 – As Stephanie is still not here and E said that she still hasn’t find her since 19:25 and said that she might not be feeling well. All of us go and find her, and finally find that she is hang up in the toilet with words on the door.</p>
         </div>
         <div data-role="footer" class="footer">
             <h4>Copyright 2023</h4>
@@ -323,16 +332,16 @@
     <!--End of RD script page-->
 
     <!--RE password page-->
-    <div data-role="page" id="RB" data-theme = "b">
+    <div data-role="page" id="RE" data-theme = "b">
         <div data-role="header" class="header">
-            <h1>Role B - Psychologist</h1>
+            <h1>Role E - Doctor</h1>
         </div>
 
         <div role="main" class="ui-content info" >
-            <h3 class="RBpass">Type your password:</h3>
-            <input type="number" class="RBpass" id="RBpassword">
-            <button class="ui-btn" class="RBpass" onclick="RBsub()">submit</button>
-            <a href="#RBscript" class="ui-btn" data-transition="pop" id="RBhide">Next</a>
+            <h3 class="REpass">Type your password:</h3>
+            <input type="number" class="REpass" id="REpassword">
+            <button class="ui-btn" class="REpass" onclick="REsub()">submit</button>
+            <a href="#REscript" class="ui-btn" data-transition="pop" id="REhide">Next</a>
             <a href="#content" class="ui-btn" data-transition="pop">Back to Home</a>
         </div>
 
@@ -343,29 +352,32 @@
     <!--End of RE password page-->
 
     <!--RE script page-->
-    <div data-role="page" id='RBscript' data-theme = "b">
+    <div data-role="page" id='REscript' data-theme = "b">
         <div data-role="header" class="header">
-            <h1>Role B - Psychologist</h1>
-            <a href="#content" class="ui-btn ui-icon-carat-l ui-btn-icon-left" >Back</a>
-            <a href="#evidence" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >Next</a>
+            <h1>Role E - Doctor</h1>
+            <a href="#content" class="ui-btn ui-icon-carat-l ui-btn-icon-left hide" >Back</a>
+            <a href="#instruction1" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >Next</a>
         </div>
         <div role="main" class="ui-content info" >
           <h5>Your profile:</h5>
-          <p>Profession: Psychologist <br>Age: 25 <br>Friend: A, C, D, E <br>Relationship: in love with Glady in age 15</p>
+          <p>Profession: Doctor <br>Age: 25 <br>Friend: “Stephanie” <br>Relationship: in love with Stephanie</p>
           <h5>Story:</h5>
-          <p>The story begins in secondary 3; you’re in the friend group with roles A, D, E and Glady (Glady is another girl who is already dead); you guys are excellent friends; however, the nightmare just began. Glady is your girlfriend by that time, you are still in love with her. One day you guys find out that Glady is being sad and constantly crying, but she doesn’t tell you guys why; you always stay by her side and know that she really suffers in pain. You decided not to ask her so she could slowly forget what happened; however, A told you that she saw some scars and pain in her body, and you determined that you needed to find out what suffered her. On that day, you trace Glady and see her being kidnapped; you take a taxi to trace Glady and see she was brought to a swimming pool; you then call 999 and go inside. When you get there, you see Stephanie’s back running away, and Glady is in the water. At this point, you hesitate for one second, and you hear a beeping sound. You ran over to Glady and pulled her out from the water to do the first aid. You see a water drop painted on her face with purple lipstick. However, the doctor announced she was dead when Glady arrived at the hospital. You swear that you will revenge on Stephanie and tell the police that you saw her running away when you arrived. Still, as she is underage at 18 and there is no real evidence that points out she is the murderer in that case. However, Stephanie left school, and you never saw her again.        </p>
-          <p>After this incident, you decided to be a psychologist and help people to speak out their voices and to divorce out of pain. 5 years after graduating from secondary school, A brought Stephanie into the friend group and told us that she was suffering from pain, and her behaviour suggests that she has a mental disorder which you suspect yourself whether Stephanie really killed Glady. 1 year later after being friends with Stephanie, C came into your clinic and asked for help. C told you that she is involved in that murder case. Still, she had no choice as Stephanie has videos of her being raped, which is a nightmare to her. If she doesn’t listen to her then Stephanie sends these videos to everyone. C told you that Stephanie bullied Glady, and Glady reported it to the teacher. Stephanie told C to kidnap her into the swimming pool, but she didn’t know what happened next. C said she was so guilty at that time, but you didn’t blame her as she is one of the sufferers and she is being used by Stephanie. C said Stephanie had disappeared since then, but she appears now and intimidates her with these videos, making her have nightmares each day. You didn’t blame C and you helped her, you gave her a medicine that will help her from overthinking. You then decided to revenge and make Stephanie miserable. As Glady’s old phone is by your hand, you then use her phone to send her threatening message throughout the year and make her feel guilty.        </p>
-          <p>On the day of gathering with the teachers in your secondary school, you decided to intimidate Stephanie by pretending that Glady’s soul possessed your body and asking her why to make her suffer more mentally. Then you decided to put a medicine (name: Wamite) to make her insane. You think this is the best way to best way to revenge is to make her life worse than death.</p>
+          <p>The story begins in secondary 3; you're in the friend group with roles A, B, D and Glady (Glady is another girl who is already dead). You guys are excellent friends. However, the nightmare just began. Glady is your best friend at that time; you guys can talk day and night. She means a lot to you. One day you guys find out Glady is sad and constantly crying, but she doesn't tell you why. Yet you were told that Glady is drowning in the news on the next day. The odd thing is the news reported that when they find Glady, there is a water drop painted on her face with purple lipstick. By then, you know someone had murdered her as she told you she had reported all the sad things. However, she was dead on the next school day. You are really mad about it but can't find who is the murderer.</p>
+          <p>Once, A told us that she met Stephanie on a mission and said she had saved her life. She told us that she was studying in the same secondary school in the same year however she left for secondary 3, as A liked her so much you and she started to join the friend group which included you, A, B and D. One day on the sixth year of graduation from secondary. You are gathering with Stephanie's family, and you see C. After gathering with Stephanie's family, she told you that C is her enemy and she may tell you something to disgust you with her, which separates us. She is right; C found you a day later and told you what had happened. C told you that she is involved in that murder case. Still, she had no choice as Stephanie has videos of her being raped, which is a nightmare to her. If she doesn't listen to her, then Stephanie sends these videos to everyone. C told you that Stephanie bullied Glady, and she reported it to the teacher. Stephanie told C to kidnap her into the swimming pool, but she didn't know what happened next. She also sends a screenshot of Stephanie threatening C the day before with C's rape video and a message "Give me five hundred thousand or else I will send these videos to my brother and the whole world". You then look at Stephanie's, confirming that she really threatened C. Then you find her dairy, which has clearly recorded the whole process of Stephanie killing Glady. You decided to revenge on the gathering with teachers in your secondary school. After you decide to avenge, you start alienating the friend group with A, B, and D so they won't know the truth and suffer in pain like you.</p>
+          <p>On the day of gathering with the teachers in your secondary school, you decided to murder Stephanie by poisoning (poison name: Womith) her. You will put the poison into her drink at the beginning of the gathering and the toxic episode after 2 hours; if she is dead from this poison, black spots appear on the soles of the deceased's feet.</p>
           <h5>Timeline:</h5>
           <p>The gathering starts at 17:45</p>
-          <p>17:39 – You arrive at the school and notice that A, C, and D have already arrived. You then join them to play basketball.</p>
-          <p>17:45 – You saw E, F and Stephanie in the hall, and the gathering starts there to watch the performance.</p>
-          <p>19:00 – End performance and a break for students and teachers to chat. You walked to find teachers by yourself.</p>
-          <p>19:15 – You met A in front of the toilet and had a small greeting; then you went into the toilet and saw a rope hanging in the ceiling of the last toilet compartment.</p>
-          <p>19:24 – You saw Stephanie going to the toilet and decided now is the time to intimidate Stephanie by pretending that Glady’s soul possessed into your body. You asked, “Why did you bully me? What have I done? Tell me!” And she was so threatening and ran into the toilet.</p>
-          <p>19:25 – You find C and E to find teachers together.</p>
-          <p>19:41 – You use an excuse to go to the toilet to split up with C and E, and you go back to the hall. As planned, you are the first one to arrive, and you put Wamite into Stephanie’s food to make her insane. Then you throw the medicine box in the rubbish bin.</p>
-          <p>19:45 – Dinner time starts, you and E arrive at the hall, then F comes and finally, A and D.</p>
+          <p>17:12 – You arrived at the school with Stephanie and noticed that A and D had already arrived and played basketball. You guys went to the hall straight away to have a drink.</p>
+          <p>17:23 – Stephanie went to the toilet and you put “Womith” into her drink.</p>
+          <p>17:27 – Stephanie came back, and she drank her drink with the poison.</p>
+          <p>17:31 – F came and sat in another corner; however, she looked like she feared Stephanie and she start trembling uncontrollably when she see Stephanie.</p>
+          <p>17:45 – The gathering starts and all of you go to the hall to watch the performance.</p>
+          <p>19:00 – End performance and a break for students and teachers to chat. You walked with Stephanie to find teachers.</p>
+          <p>19:12 – You separate with A as she prepares for the murder by putting a rope to hang up in the ceiling</p>
+          <p>19:25 – Stephanie tells you that she is not feeling well and goes to the toilet; you know, that toxic episode now. At this time, C came over to you, and you guys walked together. She asks, “After you know she is a vicious person, do you still want to be in a relationship with her?” You then pretend that she loved Stephanie so much and say that you need more time to digest this information and decide what to do as this is cruel to you.</p>
+          <p>19:26 – You guys saw B and walked together, which led to the end of your conversation with C.</p>
+          <p>19:41 – B said she needed to go to the toilet, and she left. You and C continue to talk to the teacher.</p>
+          <p>19:45 – Dinner time starts; you and E go back to the hall, and you guys see B has already gets back to the hall, then F arrives and finally, A and D.</p>
           <p>19:50 – Stephanie is still not here and E said she still hasn’t found her since 19:25 and said she might not be feeling well. We all go and find her, and finally find that she is hung up in the toilet with words on the door.</p>
         </div>
         <div data-role="footer" class="footer">
@@ -375,16 +387,16 @@
     <!--End of RE script page-->
 
     <!--RF password page-->
-    <div data-role="page" id="RC" data-theme = "b">
+    <div data-role="page" id="RF" data-theme = "b">
         <div data-role="header" class="header">
-            <h1>Role C - Dancer</h1>
+            <h1>Role F - Accountant</h1>
         </div>
 
         <div role="main" class="ui-content info" >
-            <h3 class="RCpass">Type your password:</h3>
-            <input type="number" class="RCpass" id="RCpassword">
-            <button class="ui-btn" class="RCpass" onclick="RCsub()">submit</button>
-            <a href="#RCscript" class="ui-btn" data-transition="pop" id="RChide">Next</a>
+            <h3 class="RFpass">Type your password:</h3>
+            <input type="number" class="RFpass" id="RFpassword">
+            <button class="ui-btn" class="RFpass" onclick="RFsub()">submit</button>
+            <a href="#RFscript" class="ui-btn" data-transition="pop" id="RFhide">Next</a>
             <a href="#content" class="ui-btn" data-transition="pop">Back to Home</a>
         </div>
 
@@ -395,29 +407,31 @@
     <!--End of RF password page-->
 
     <!--RF script page-->
-    <div data-role="page" id='RCscript' data-theme = "b">
+    <div data-role="page" id='RFscript' data-theme = "b">
         <div data-role="header" class="header">
-            <h1>Role C - Dancer</h1>
-            <a href="#content" class="ui-btn ui-icon-carat-l ui-btn-icon-left" >Back</a>
-            <a href="#evidence" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >Next</a>
+            <h1>Role F - Accountant</h1>
+            <a href="#content" class="ui-btn ui-icon-carat-l ui-btn-icon-left hide" >Back</a>
+            <a href="#instruction1" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >Next</a>
         </div>
         <div role="main" class="ui-content info" >
           <h5>Your profile:</h5>
-          <p>Profession: Dancer <br>Age: 25 <br>Friend: B, E <br>Relationship: enemy with Stephanie</p>
+          <p>Profession: Accountant <br>Age: 25 <br>Friend: NA <br>Relationship: enemy with Stephanie</p>
           <h5>Story:</h5>
-          <p>The story begins in secondary 3 and it is your nightmare. One day after school, you were kidnapped and raped by 3 guys. You saw Stephanie is on the side and filming the whole process. The next day, Stephanie finds you and commands you to listen to her. Stephanie had a horrible temper at that time. Whenever she has a bad mood, she will punch you and Glady (another girl which already dead). On one Monday, Glady told you that she reported to the teacher that Stephanie was bullying her and the teacher decided to suspend her for 2 days. Stephanie was so angry and told you she would delete those videos if you brought Glady to the swimming pool after school. You find people to kidnap her to the swimming pool and think that Stephanie will bully her such as before. You refuse to look at what will happen as you feel that you betrayed Glady and decided to compensate her after Stephanie deleted the photos. However, the news reported a girl drowning in the swimming pool; you know that girl is Glady. You are so guilty, and you got depression and suffer mental pain.</p>
-          <p>It starts to get better after being a dancer and you are more confident; you then have a boyfriend one day in the sixth year of graduation from secondary school. You are gathering with your boyfriend's family and you meet Stephanie again as she is your boyfriend's sister. You know that E is now having a relationship with Stephanie. After gathering with your boyfriend's family, you decide to tell E the truth; she has the right to know that as Glady is her best friend by that time. You tell her what you know about Glady's death, and send her the screenshot of Stephanie sending you your rape video with the message, "Give me five hundred thousand or else I will send these videos to my brother and the whole world". She didn’t answer you but you know that she hasn’t fully trust you.</p>
-          <p>Your depression gets worst, and you finally decide to see a psychologist; this person is B. You know that she had a relationship with Glady at that time, and she is a friend of E. However, there is a chance that B hates you or decides to revenge on you, but you decided to stop things from going wrong and told B the whole thing. She said to you that she didn't blame you and helped you, which made the condition of your depression get much better. She gave you medicine (name: Wamite) to prevent overthinking and help your depression.</p>
+          <p>You are in the same secondary school with A, B, C, D, E and Stephanie; however, you are not close to any of them in secondary. After graduating 4 years from secondary school, you choose to be an accountant and work in the same company as Stephanie. She looks like she worked there long ago; you don’t know why or maybe you look so weak that she starts to bully you. She isolates you, grabs your achievements, and asks people to rape you. If you don’t listen or follow her order, she will show you your parent’s photo and say, “If you say ‘no’ to me, they will lose their life!” It is such a nightmare to you. You then got depression and you got a median called Wamite to prevent overthinking and help your depression. </p>
+          <p>One day Stephanie unintentionally says that she had a gathering with the teachers in her secondary second, and you know you are in the same secondary school by graduating 2 years later than her. As no one remembers you in your secondary school, you thought that if you killed her, you would be free.</p>
+          <p>On the day of gathering with the teachers in your secondary school, you decided to murder Stephanie by stunning her with the stunning spray and using a knife to kill her.</p>
           <h5>Timeline:</h5>
           <p>The gathering starts at 17:45</p>
-          <p>17:14 – You arrive at the school and start playing basketball with A and D. After a while, F comes and goes to the hall; finally comes B, and she joins us to play basketball.</p>
-          <p>17:45 – You saw E, F and Stephanie in the hall, and the gathering starts there to watch the performance.</p>
-          <p>19:00 – End performance and a break for students and teachers to chat. You went to the toilet (nothing special there), and after you came out, you walked to find the teachers alone.</p>
-          <p>19:25 – E comes and finds you, and you guys walk together; you ask her, “After you know she is a vicious person, you still want to be in a relationship with her?”. She said she needed some time to digest this information and decide what to do, as this was cruel to her.</p>
-          <p>19:26 – You guys saw B and walked together, which led to the end of your conversation with E</p>
-          <p>19:41 – B said she needed to go to the toilet, and she left. You and E continue to talk to the teacher.</p>
-          <p>19:45 – Dinner time starts; you and E go back to the hall, and you guys see B has already returned to the hall, then F arrives and finally, A and D.</p>
-          <p>19:50 – Stephanie is still not here, and E said she still hasn’t found her since 19:25 and said she might not be feeling well. We all go and find her, and finally find that she is hung up in the toilet with words on the door.</p>
+          <p>17:31 – You arrived at the school and noticed that A, C and D had already arrived and playing basketball. You go straight to the hall to have a drink and see E and Stephanie; you start trembling uncontrollably.        </p>
+          <p>The gathering starts, and people go to the hall to watch the performance.</p>
+          <p>19:00 – End performance and a break for students and teachers to chat. You find teachers yourself.</p>
+          <p>19:12 – You separate with A as she prepares for the murder by putting a rope to hang up in the ceiling.</p>
+          <p>19:16 – She went back and continued to talk to teachers together.</p>
+          <p>19:20 - You went to the toilet and saw a rope hanging in the ceiling of the last toilet compartment.</p>
+          <p>19:25 – You saw D and went out of the toilet together. You saw Stephanie run into the toilet; it seemed she was not feeling well.</p>
+          <p>19:41 – You notice that Stephanie still hasn’t come out, and you go into the toilet and decide to kill her. However, when you get in, you see her hanging from the ceiling already, and there are words on the door. You are so scared that you leave the toilet and try to be as calm as possible.</p>
+          <p>19:45 – Dinner time starts; you go back to the hall. B, C and E are already there; A and D came in last.</p>
+          <p>19:50 – Stephanie is still not here and E said she still hasn’t found her since 19:25 and said she might not be feeling well. We all go and find her, and finally find that she is hung up in the toilet with words on the door.</p>
         </div>
         <div data-role="footer" class="footer">
             <h4>Copyright 2023</h4>
@@ -425,48 +439,116 @@
     </div>
     <!--End of RF script page-->
     
-
-<!--   2019 month October -->
-    <div data-role="page" id='2019-october' data-theme = "b">
-        <div data-role="header">
-            <h1>October</h1>
-            <a href="#2019y" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+    <!--instruction1 page-->
+    <div data-role="page" id='instruction1' data-theme = "b">
+        <div data-role="header" class="header">
+            <h1>Instruction</h1>
         </div>
-        <div role="main" class="ui-content" >
+        <div role="main" class="ui-content info" >
+          <h2>The time now is 20:00, 10 minutes ago you guys find that Stephanie is dead in the toilet. Hung up in the celling of the last toilet compartment and a purple water drop shape was drawn on her face, words such as “TOU KILLED ME!”, “YOU DON’T DESERVE WHAT YOU HAVE NOW!” are on the toilet door facing her. All of you are the suspects of murdering her. Now, everyone talk about your timeline since you came to school.</p>
+          <a href="#instruction2" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >Next</a>
+        </div>
+        <div data-role="footer" class="footer">
+            <h4>Copyright 2023</h4>
+        </div>
+    </div>
+    <!--End of instruction1 page-->
+
+    <!--instruction2 page-->
+    <div data-role="page" id='instruction2' data-theme = "b">
+        <div data-role="header" class="header">
+            <h1>Instruction</h1>
+        </div>
+        <div role="main" class="ui-content info" >
+            <h2>On the next page you will receive information of two scene, the hall and toilet. By this stage, you can only get information for one scene. You could not go back and choose the other one. <br><br> *Have a discussion on which scene so people going to each scene will be balance</h2>
+          <a href="#scene" class="ui-btn ui-icon-carat-r ui-btn-icon-right" id="instrnext" >Next</a>
+        </div>
+        <div data-role="footer" class="footer">
+            <h4>Copyright 2023</h4>
+        </div>
+    </div>
+    <!--End of instruction2 page-->
+
+
+<!--   Scene opinion -->
+    <div data-role="page" id='scene' data-theme = "b">
+        <div data-role="header" class="header">
+            <h1>Scene opinion</h1>
+            <a href="#toilet" class="ui-btn ui-icon-carat-l ui-btn-icon-left hide">Back</a>
+        </div>
+        <div role="main" class="ui-content info" >
           <ul data-role="listview" data-inset="true">
              <li>
-                    <a href="#2019-october-20" data-transition="slide">
-                        <h1>20th October 2019</h1>
+                    <a href="#toilet" data-transition="slide">
+                        <h1>Toilet</h1>
                     </a>
                 </li>
              <li>
-                    <a href="#2019-october-22" data-transition="slide">
-                        <h1>22th October 2019</h1>
+                    <a href="#hall" data-transition="slide">
+                        <h1>Hall</h1>
                     </a>
                 </li>
           </ul>
         </div>
-        <div data-role="footer">
-            <h4>Copyright Blair's diary</h4>
+        <div data-role="footer" class="footer">
+            <h4>Copyright 2023</h4>
         </div>
     </div>
-<!--  End of 2019 month October page -->
+<!--  End of Scene opinion page -->
 
-  <!--   2019 month October 20 -->
-    <div data-role="page" id='2019-october-20' data-theme = "b">
-        <div data-role="header">
-            <h1>20th October 2019</h1>
-            <a href="#2019-october" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
-        </div>
-        <div role="main" class="ui-content" >
-          <p>Hello, this is the first day that I write my diary. I am going to talk about myself.<br> I am a girl that is kind of shy but I want to change my personality, I always feel sad of friends but I really want to change myself and be alone. That’s why I download an app called “soul”, this is an app that find friends inside the internet. This is a brief description about myself at this moment<br><br> Now I am going to talk about my day, today is Sunday and nothing special had happened, I am going to visit my grandma and grandpa(my dad’s side) at night so I am writing this now.</p>
-        </div>
-        <div data-role="footer">
-            <h4>Copyright Blair's diary</h4>
-        </div>
+<!--   Toilet opinion -->
+<div data-role="page" id='toilet' data-theme = "b">
+    <div data-role="header" class="header">
+        <h1>Toilet</h1>
+        <a href="#toilet" class="ui-btn ui-icon-carat-l ui-btn-icon-left hide">Back</a>
+        <a href="#content" class="ui-btn ui-icon-carat-r ui-btn-icon-right">Next</a>
     </div>
-<!--  End of 2019 month October 20 page -->
+    <div role="main" class="ui-content info" >
+      <ul data-role="listview" data-inset="true">
+         <li>
+                <button>
+                    <h1>Toilet</h1>
+                </button>
+            </li>
+         <li>
+                <a href="#hall" data-transition="slide">
+                    <h1>Hall</h1>
+                </a>
+            </li>
+      </ul>
+    </div>
+    <div data-role="footer" class="footer">
+        <h4>Copyright 2023</h4>
+    </div>
+</div>
+<!--  End of Toilet opinion page -->
 
+<!--   Hall opinion -->
+<div data-role="page" id='hall' data-theme = "b">
+    <div data-role="header" class="header">
+        <h1>Toilet</h1>
+        <a href="#toilet" class="ui-btn ui-icon-carat-l ui-btn-icon-left hide">Back</a>
+        <a href="#content" class="ui-btn ui-icon-carat-r ui-btn-icon-right">Next</a>
+    </div>
+    <div role="main" class="ui-content info" >
+      <ul data-role="listview" data-inset="true">
+         <li>
+                <button>
+                    <h1>Toilet</h1>
+                </button>
+            </li>
+         <li>
+                <a href="#hall" data-transition="slide">
+                    <h1>Hall</h1>
+                </a>
+            </li>
+      </ul>
+    </div>
+    <div data-role="footer" class="footer">
+        <h4>Copyright 2023</h4>
+    </div>
+</div>
+<!--  End of Hall opinion page -->
 
 
 <script>
@@ -509,6 +591,46 @@ function RCsub() {
     alert("Wrong password"); 
   }
 }
+
+function RDsub() {
+    var RDhide = document.getElementById("RDhide");
+    var RDpassword = document.getElementById("RDpassword").value;
+    var RDrightpass = '7284';
+  if(RDpassword ==''){
+    alert("Please input your password");
+  }else if(RDpassword == RDrightpass){
+    RDhide.style.display = "block";
+  }else {
+    alert("Wrong password"); 
+  }
+}
+
+function REsub() {
+    var REhide = document.getElementById("REhide");
+    var REpassword = document.getElementById("REpassword").value;
+    var RErightpass = '5542';
+  if(REpassword ==''){
+    alert("Please input your password");
+  }else if(REpassword == RErightpass){
+    REhide.style.display = "block";
+  }else {
+    alert("Wrong password"); 
+  }
+}
+
+function RFsub() {
+    var RFhide = document.getElementById("RFhide");
+    var RFpassword = document.getElementById("RFpassword").value;
+    var RFrightpass = '2198';
+  if(RFpassword ==''){
+    alert("Please input your password");
+  }else if(RFpassword == RFrightpass){
+    RFhide.style.display = "block";
+  }else {
+    alert("Wrong password"); 
+  }
+}
+
 
 </script>
 
