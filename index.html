@@ -37,8 +37,6 @@
       visibility: hidden;
     }
 
-
-
     .info{
         height: 90%;
         margin-top: 20px;
@@ -79,6 +77,76 @@
     #input{
       background-color: #5d6066;
     }
+
+    /* replace your existing chat styles OR append these */
+
+  /* Header (green bar) */
+  .chat-header {
+    background: #2f7d4f;
+    color: #fff;
+    border-radius: 12px 12px 0 0;
+    padding: 10px 14px;
+    max-width: 480px;
+    margin: 0 auto 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.15);
+    text-align: center; /* <<< centers text */
+  }
+  .chat-name {
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .chat-date {
+    opacity: 0.9;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  /* Thread */
+  .chat-thread{
+    max-width:480px;
+    height:calc(100vh - 220px);
+    margin:0 auto;
+    background:#f6f7f8;
+    border-radius:0 0 18px 18px;
+    padding:14px 12px 24px;
+    overflow-y:auto;
+    box-shadow: inset 0 1px 0 #e6e6e6, 0 1px 4px rgba(0,0,0,.05);
+  }
+
+  /* Bubbles – BLACK text */
+  /* Chat bubbles */
+.bubble {
+  display: inline-block;
+  position: relative;
+  padding: 10px 12px 18px;
+  margin: 8px 6px;
+  border-radius: 14px;
+  max-width: 78%;
+  line-height: 1.25;
+  background: #e4e5e7; /* Left bubble (grey) */
+  color: #111;
+  clear: both;
+}
+
+.bubble.left {
+  float: left;
+  background: #e4e5e7; /* grey bubble on left */
+}
+
+.bubble.right {
+  float: right;
+  background: #d8f3a3; /* green bubble on right */
+  text-align: right;
+}
+
+/* Timestamp style */
+.bubble .time {
+  position: absolute;
+  right: 10px;
+  bottom: 4px;
+  font-size: 11px;
+  opacity: .6;
+}
 
 </style>
 
@@ -151,7 +219,7 @@ onload="stopBack();" -->
         <div role="main" class="ui-content info" >
             <h3 class="RApass">Type your password:</h3>
             <input type="number" class="RApass" id="RApassword">
-            <button class="ui-btn" class="RApass" onclick="RAsub()">submit</button>
+            <button class="ui-btn RApass" onclick="RAsub()">submit</button>
             <a href="#RAscript" class="ui-btn" data-transition="pop" id="RAhide">Next</a>
             <a href="#content" class="ui-btn" data-transition="pop">Back to Home</a>
         </div>
@@ -204,7 +272,8 @@ onload="stopBack();" -->
         <div role="main" class="ui-content info" >
             <h3 class="RBpass">Type your password:</h3>
             <input type="number" class="RBpass" id="RBpassword">
-            <button class="ui-btn" class="RBpass" onclick="RBsub()">submit</button>
+            <!-- FIX: call RBsub() -->
+            <button class="ui-btn RBpass" onclick="RBsub()">submit</button>
             <a href="#RBscript" class="ui-btn" data-transition="pop" id="RBhide">Next</a>
             <a href="#content" class="ui-btn" data-transition="pop">Back to Home</a>
         </div>
@@ -815,7 +884,6 @@ onload="stopBack();" -->
     <p>D (Chef) look at information for E (Doctor)</p>
     <p>E (Doctor) look at information for F (Accountant)</p>
     <p>F (Accountant) look at information for A (Firefighter)</p>
-    <h2>*Everyone can assess Stephanie's profile*</h2>
     <a href="#charaevid" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >Next</a>
   </div>
   <div data-role="footer" class="footer">
@@ -868,11 +936,6 @@ onload="stopBack();" -->
           <p>Accountant</p>
       </a>
   </li>
-  <li>
-    <a href="#STEPEVPASS" data-transition="slide">
-        <h1>Stephanie</h1>
-    </a>
-</li>
     </ul>
   </div>
   <div data-role="footer" class="footer">
@@ -881,22 +944,25 @@ onload="stopBack();" -->
 </div>
 <!--  End of character evidence page -->
 
-<!--RAEV password page-->
-<div data-role="page" id="RAEVPASS" data-theme = "b">
+<!-- RAEV password page (single instance only) -->
+<div data-role="page" id="RAEVPASS" data-theme="b">
   <div data-role="header" class="header">
-      <h1>Role A evidence - Firefighter</h1>
+    <h1>Role A evidence - Firefighter</h1>
   </div>
 
-  <div role="main" class="ui-content info" >
-      <h3 class="RAEVpass">Type your password:</h3>
-      <input type="number" class="RApass" id="RAEVpassword">
-      <button class="ui-btn" cEVlass="RAEVpass" onclick="RAEVsub()">submit</button>
-      <a href="#RAevid" class="ui-btn" data-transition="pop" id="RAEVhide">Next</a>
-      <a href="#charaevid" class="ui-btn" data-transition="pop">Back to Home</a>
+  <div role="main" class="ui-content info">
+    <h3 class="RAEVpass">Type your password:</h3>
+    <input type="number" class="RApass" id="RAEVpassword">
+    <button class="ui-btn RAEVpass" onclick="RAEVsub()">submit</button>
+
+    <!-- hidden Next link that RAEVsub() will reveal -->
+    <a href="#RAevid" class="ui-btn" data-transition="pop" id="RAEVhide" style="display:none">Next</a>
+
+    <a href="#charaevid" class="ui-btn" data-transition="pop">Back to Home</a>
   </div>
 
   <div data-role="footer" class="footer">
-      <h4>Copyright 2023</h4>
+    <h4>Copyright 2023</h4>
   </div>
 </div>
 <!--End of RAEV password page-->
@@ -905,7 +971,7 @@ onload="stopBack();" -->
 <div data-role="page" id='RAevid' data-theme = "b">
   <div data-role="header" class="header">
       <h1>A - Firefighter</h1>
-      <a href="#charaevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left hide">Back</a>
+      <a href="#charaevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
   </div>
   <div role="main" class="ui-content info" >
     <ul data-role="listview" data-inset="true">
@@ -934,7 +1000,6 @@ onload="stopBack();" -->
         <a href="#RAevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
     </div>
     <div role="main" class="ui-content info" >
-      <div role="main" class="ui-content info" >
         <h2>Screenshot in Stephanie's phone with C</h2>
         <a><img src="https://i.ibb.co/6c7C17BZ/PHOTO-2025-10-19-17-21-47.jpg" alt="cover600-1" class="c2stephchat"></a>
     <div data-role="footer" class="footer">
@@ -947,11 +1012,10 @@ onload="stopBack();" -->
 <!-- RAevid2ga page -->
 <div data-role="page" id='RAevid2ga' data-theme = "b">
     <div data-role="header" class="header">
-        <h1>Evidence 1</h1>
+        <h1>Evidence 2</h1>
         <a href="#RAevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
     </div>
     <div role="main" class="ui-content info" >
-      <div role="main" class="ui-content info" >
         <h2>FORENSIC EVIDENCE REPORT</h2>
         <a><img src="https://i.ibb.co/mC6BrMm9/Screenshot-2025-10-19-at-17-30-49.png" alt="cover600-1" class="c2stephchat"></a>
     <div data-role="footer" class="footer">
@@ -963,7 +1027,7 @@ onload="stopBack();" -->
 
 
 <!--RBEV password page-->
-<div data-role="page" id="RAEVPASS" data-theme = "b">
+<div data-role="page" id="RBEVPASS" data-theme = "b">
   <div data-role="header" class="header">
       <h1>Role B evidence - Psychologist</h1>
   </div>
@@ -986,7 +1050,7 @@ onload="stopBack();" -->
 <div data-role="page" id='RBevid' data-theme = "b">
   <div data-role="header" class="header">
       <h1>B - Psychologist</h1>
-      <a href="#charaevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left hide">Back</a>
+      <a href="#charaevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
   </div>
   <div role="main" class="ui-content info" >
     <ul data-role="listview" data-inset="true">
@@ -995,10 +1059,10 @@ onload="stopBack();" -->
                   <h1>1</h1>
               </a>
           </li>
-       <li>
-              <a href="#RBevid2ga" data-transition="slide">
-                  <h1>2</h1>
-              </a>
+          <li>
+            <a href="#RBchatlist" data-transition="slide">
+              <h1>2</h1>
+            </a>
           </li>
     </ul>
   </div>
@@ -1008,13 +1072,306 @@ onload="stopBack();" -->
 </div>
 <!--  End of RBevid page -->
 
+<!-- RBevid1ga page -->
+<div data-role="page" id="RBevid1ga" data-theme="b">
+  <div data-role="header" class="header">
+    <h1>Evidence 1</h1>
+    <a href="#RBevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+
+  <div role="main" class="ui-content info">
+    <h2>Text conversation between B and C (therapy session excerpt)</h2>
+    <a><img src="https://i.ibb.co/6c7C17BZ/PHOTO-2025-10-19-17-21-47.jpg" alt="b2c-chat" class="b2cchat"></a>
+  </div>
+
+  <div data-role="footer" class="footer">
+    <h4>Copyright 2023</h4>
+  </div>
+</div>
+<!-- End of RBevid1ga page -->
+
+<!-- ====== NEW: B Chat Evidence (list) ====== -->
+<div data-role="page" id="RBchatlist" data-theme="b">
+  <div data-role="header" class="header">
+    <h1>B – Chat Evidence</h1>
+    <a href="#RBevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info">
+    <h3>Select a conversation</h3>
+    <ul data-role="listview" data-inset="true">
+      <li><a href="#RBchatview" class="open-chat" data-convo="bc">
+        <h2>C</h2>
+      </a></li>
+      <li><a href="#RBchatview" class="open-chat" data-convo="be">
+        <h2>E</h2>
+      </a></li>
+    </ul>
+  </div>
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
+
+<!-- ====== B Chat Evidence (viewer) ====== -->
+<div data-role="page" id="RBchatview" data-theme="b">
+  <div data-role="header" class="header">
+    <h1 id="rb-chat-title">Conversation</h1>
+    <a href="#RBchatlist" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+
+  <div role="main" class="ui-content info">
+    <div class="chat-header">
+      <div class="chat-name" id="rb-chat-header-name">Name</div>
+      <div class="chat-date" id="rb-chat-header-date">Date</div>
+    </div>
+    <div id="rb-chat-thread" class="chat-thread" aria-live="polite"></div>
+  </div>
+
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
+<!-- ====== B Chat Evidence (viewer) end ====== -->
+
+
+<!-- RCEV password page -->
+<div data-role="page" id="RCEVPASS" data-theme="b">
+  <div data-role="header" class="header">
+    <h1>Role C Evidence - Dancer</h1>
+  </div>
+
+  <div role="main" class="ui-content info" >
+      <h3 class="RCEVpass">Type your password:</h3>
+      <input type="number" class="RBpass" id="RCEVpassword">
+      <button class="ui-btn" cEVlass="RCEVpass" onclick="RCEVsub()">submit</button>
+      <a href="#RCevid" class="ui-btn" data-transition="pop" id="RCEVhide">Next</a>
+      <a href="#charaevid" class="ui-btn" data-transition="pop">Back to Home</a>
+  </div>
+
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
+
+<!-- RCevid page -->
+<div data-role="page" id='RCevid' data-theme="b">
+  <div data-role="header" class="header">
+    <h1>C – Dancer</h1>
+    <a href="#charaevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info">
+    <ul data-role="listview" data-inset="true">
+      <li><a href="#RCevid1ga" data-transition="slide"><h1>1</h1></a></li>
+      <li><a href="#RCevid2ga" data-transition="slide"><h1>2</h1></a></li>
+    </ul>
+  </div>
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
+
+<!-- RCevid1ga page -->
+<div data-role="page" id='RCevid1ga' data-theme="b">
+  <div data-role="header" class="header">
+    <h1>Evidence 1</h1>
+    <a href="#RCevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info">
+    <h2>C messaging Stephanie</h2>
+    <a><img src="https://i.ibb.co/HfVzVsNW/PHOTO-2025-10-19-22-22-22.png" alt="C evidence 1"></a>
+  </div>
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
+
+<!-- RCevid2ga page -->
+<div data-role="page" id='RCevid2ga' data-theme="b">
+  <div data-role="header" class="header">
+    <h1>Evidence 2</h1>
+    <a href="#RCevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info">
+    <h2>Medical prescription</h2>
+    <a><img src="https://i.ibb.co/jPDHTn9r/Chat-GPT-Image-2025-10-19-11-50-55.png" alt="C evidence 2"></a>
+  </div>
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
+
+
+
+<!-- ===================== ROLE D (CHEF) ===================== -->
+<div data-role="page" id="RDEVPASS" data-theme="b">
+  <div data-role="header" class="header">
+    <h1>Role D Evidence – Chef</h1>
+  </div>
+
+  <div role="main" class="ui-content info">
+    <h3>Type your password:</h3>
+    <input type="number" id="RDEVpassword">
+    <button class="ui-btn" onclick="RDEVsub()">Submit</button>
+    <a href="#RDevid" class="ui-btn" data-transition="pop" id="RDEVhide" style="display:none">Next</a>
+    <a href="#charaevid" class="ui-btn" data-transition="pop">Back to Home</a>
+  </div>
+
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
+
+<div data-role="page" id='RDevid' data-theme="b">
+  <div data-role="header" class="header">
+    <h1>D – Chef</h1>
+    <a href="#charaevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info">
+    <ul data-role="listview" data-inset="true">
+      <li><a href="#RDevid1ga" data-transition="slide"><h1>1</h1></a></li>
+      <li><a href="#RDevid2ga" data-transition="slide"><h1>2</h1></a></li>
+    </ul>
+  </div>
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
+
+<div data-role="page" id='RDevid1ga' data-theme="b">
+  <div data-role="header" class="header">
+    <h1>Evidence 1</h1>
+    <a href="#RDevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info">
+    <h2>Message with A</h2>
+    <a><img src="https://i.ibb.co/0RYWYFXw/Screenshot-2025-10-19-at-23-05-05.png" alt="D evidence 1"></a>
+  </div>
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
+
+<div data-role="page" id='RDevid2ga' data-theme="b">
+  <div data-role="header" class="header">
+    <h1>Evidence 2</h1>
+    <a href="#RDevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info">
+    <h2>Stun spray in D's bag</h2>
+    <a><img src="https://i.ibb.co/MyBqxKpq/Chat-GPT-Image-2025-10-19-11-09-18.png" alt="D evidence 2"></a>
+  </div>
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
+
+
+
+<!-- ===================== ROLE E (DOCTOR) ===================== -->
+<div data-role="page" id="REEVPASS" data-theme="b">
+  <div data-role="header" class="header">
+    <h1>Role E Evidence – Doctor</h1>
+  </div>
+
+  <div role="main" class="ui-content info">
+    <h3>Type your password:</h3>
+    <input type="number" id="REEVpassword">
+    <button class="ui-btn" onclick="REEVsub()">Submit</button>
+    <a href="#REevid" class="ui-btn" data-transition="pop" id="REEVhide" style="display:none">Next</a>
+    <a href="#charaevid" class="ui-btn" data-transition="pop">Back to Home</a>
+  </div>
+
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
+
+<div data-role="page" id='REevid' data-theme="b">
+  <div data-role="header" class="header">
+    <h1>E – Doctor</h1>
+    <a href="#charaevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info">
+    <ul data-role="listview" data-inset="true">
+      <li><a href="#REevid1ga" data-transition="slide"><h1>1</h1></a></li>
+      <li><a href="#REevid2ga" data-transition="slide"><h1>2</h1></a></li>
+    </ul>
+  </div>
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
+
+<div data-role="page" id='REevid1ga' data-theme="b">
+  <div data-role="header" class="header">
+    <h1>Evidence 1</h1>
+    <a href="#REevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info">
+    <a><img src="https://i.ibb.co/Kp3jCF9x/Chat-GPT-Image-2025-10-19-11-22-05.png" alt="E evidence 1"></a>
+  </div>
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
+
+<div data-role="page" id='REevid2ga' data-theme="b">
+  <div data-role="header" class="header">
+    <h1>Evidence 2</h1>
+    <a href="#REevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info">
+    <h2>Email (draft)</h2>
+    <h3>To: Stephanie</h3>
+    <h3>Subject: About the past</h3>
+    <p><b>You said people forget pain once they start smiling again. <br>I’ve treated people who tried. Some wounds don’t heal, no matter how many times you close them.
+      <br><br>Glady deserved better.
+        <br>I hope tonight reminds you of what it feels like to lose control.</b></p>
+        <p>------------------------------------------------------------------------------------------------</p>
+        <h3>To: Stephanie</h3>
+        <h3>Subject: I still remember the pool</h3>
+        <p><b>You said Glady was weak — that she deserved it. <br>But weakness isn’t a sin. Cruelty is.
+          <br><br>I hope one day you understand what real fear feels like.</p>
+  </div>
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
+
+
+
+<!-- ===================== ROLE F (ACCOUNTANT) ===================== -->
+<div data-role="page" id="RFEVPASS" data-theme="b">
+  <div data-role="header" class="header">
+    <h1>Role F Evidence – Accountant</h1>
+  </div>
+
+  <div role="main" class="ui-content info">
+    <h3>Type your password:</h3>
+    <input type="number" id="RFEVpassword">
+    <button class="ui-btn" onclick="RFEVsub()">Submit</button>
+    <a href="#RFevid" class="ui-btn" data-transition="pop" id="RFEVhide" style="display:none">Next</a>
+    <a href="#charaevid" class="ui-btn" data-transition="pop">Back to Home</a>
+  </div>
+
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
+
+<div data-role="page" id='RFevid' data-theme="b">
+  <div data-role="header" class="header">
+    <h1>F – Accountant</h1>
+    <a href="#charaevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info">
+    <ul data-role="listview" data-inset="true">
+      <li><a href="#RFevid1ga" data-transition="slide"><h1>1</h1></a></li>
+      <li><a href="#RFevid2ga" data-transition="slide"><h1>2</h1></a></li>
+    </ul>
+  </div>
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
+
+<div data-role="page" id='RFevid1ga' data-theme="b">
+  <div data-role="header" class="header">
+    <h1>Evidence 1</h1>
+    <a href="#RFevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info">
+    <h2>Message from Stephanie</h2>
+    <a><img src="https://i.ibb.co/p6czHvfm/Screenshot-2025-10-19-at-23-34-35.png" alt="F evidence 1"></a>
+  </div>
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
+
+<div data-role="page" id='RFevid2ga' data-theme="b">
+  <div data-role="header" class="header">
+    <h1>Evidence 2</h1>
+    <a href="#RFevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info">
+    <h2>Knife in her bag</h2>
+    <a><img src="https://i.ibb.co/tMR92Kpx/Chat-GPT-Image-2025-10-19-11-38-37.png" alt="F evidence 2"></a>
+  </div>
+  <div data-role="footer" class="footer"><h4>Copyright 2023</h4></div>
+</div>
 
 
 
 
 
 <script>
-
 function RAsub() {
     var RAhide = document.getElementById("RAhide");
     var RApassword = document.getElementById("RApassword").value;
@@ -1093,16 +1450,6 @@ function RFsub() {
   }
 }
 
-// function search(){
-//   var searchword = document.getElementById("searchword").value;
-//   var answer = document.getElementById("answer");
-//   if (searchword === 'Womith') {
-//     answer.innerHTML = "<p>Last night, I slept in my friend's house, but the next day I was at a lonely island!</p>";
-//   } else {
-//     answer.innerHTML = "<p>No result found.</p>";
-//   }
-// }
-
 $(document).on("pagecreate", "#hall4", function () {
   $("#searchBtn").on("click", function () {
     const key = $("#searchword").val().trim().toLowerCase();
@@ -1135,9 +1482,6 @@ $(document).on("pagecreate", "#hall4", function () {
     }
   });
 });
-// function stopBack() {
-//          window.history.go(1);
-//       }
 
 function RAEVsub() {
     var RAEVhide = document.getElementById("RAEVhide");
@@ -1152,9 +1496,165 @@ function RAEVsub() {
   }
 }
 
+function RBEVsub() {
+    var RBEVhide = document.getElementById("RBEVhide");
+    var RBEVpassword = document.getElementById("RBEVpassword").value;
+    var RBEVrightpass = '3125';
+  if(RBEVpassword ==''){
+    alert("Please input your password");
+  }else if(RBEVpassword == RBEVrightpass){
+    RBEVhide.style.display = "block";
+  }else {
+    alert("Wrong password");
+  }
+}
+
+function RCEVsub() {
+    var RCEVhide = document.getElementById("RCEVhide");
+    var RCEVpassword = document.getElementById("RCEVpassword").value;
+    var RCEVrightpass = '2731'; // B's main password
+    if (RCEVpassword == '') {
+        alert("Please input your password");
+    } else if (RCEVpassword == RCEVrightpass) {
+        RCEVhide.style.display = "block";
+    } else {
+        alert("Wrong password");
+    }
+}
+
+function RDEVsub() {
+    var RDEVhide = document.getElementById("RDEVhide");
+    var RDEVpassword = document.getElementById("RDEVpassword").value;
+    var RDEVrightpass = '9347'; // C's main password
+    if (RDEVpassword == '') {
+        alert("Please input your password");
+    } else if (RDEVpassword == RDEVrightpass) {
+        RDEVhide.style.display = "block";
+    } else {
+        alert("Wrong password");
+    }
+}
+
+function REEVsub() {
+    var REEVhide = document.getElementById("REEVhide");
+    var REEVpassword = document.getElementById("REEVpassword").value;
+    var REEVrightpass = '7284'; // D's main password
+    if (REEVpassword == '') {
+        alert("Please input your password");
+    } else if (REEVpassword == REEVrightpass) {
+        REEVhide.style.display = "block";
+    } else {
+        alert("Wrong password");
+    }
+}
+
+function RFEVsub() {
+    var RFEVhide = document.getElementById("RFEVhide");
+    var RFEVpassword = document.getElementById("RFEVpassword").value;
+    var RFEVrightpass = '5542'; // E's main password
+    if (RFEVpassword == '') {
+        alert("Please input your password");
+    } else if (RFEVpassword == RFEVrightpass) {
+        RFEVhide.style.display = "block";
+    } else {
+        alert("Wrong password");
+    }
+}
+
+/* ===== Chat evidence data + renderer ===== */
+const RB_CONVOS = {
+  bc: {
+    title: "C",                // << only the name for the purple header
+    headerName: "C",
+    headerDate: "10 Nov 2023", // << add the date you want shown in green box
+    messages: [
+      { side:'left',  time:'18:41', text:"B, She cornered me again. I am scared." },
+      { side:'left',  time:'18:41', text:"Said if I tell anyone, she’ll send those videos to my brother." },
+      { side:'right', time:'18:44', text:"Don’t run from the memory, C. Face it. Let it hurt you until you control it." },
+      { side:'left',  time:'18:43', text:"You don’t understand, B. I helped her die. I was there. Stephanie made me bring her." },
+      { side:'right', time:'18:42', text:"I saw the message on Stephanie’s phone: “If you tell, I’ll say you killed Glady.” I screenshotted it." },
+      { side:'left',  time:'18:43', text:"You… saw that? Then it’s real. She’s using Glady against me." },
+      { side:'right', time:'18:44', text:"Keep every threat. It’s evidence of coercion. If she pushes again, we push back." },
+      { side:'left',  time:'18:45', text:"I don’t want to see her again tonight. The pool, Glady’s eyes… I just can’t forget it." }
+    ]
+  },
+  be: {
+    title: "E",
+    headerName: "E",
+    headerDate: "11 Nov 2023",
+    messages: [
+      { side:'left',  time:'18:09', text:"She’ll be at the gathering. I don’t know if I can face her after Glady." },
+      { side:'right', time:'18:10', text:"You don’t need to avoid her. You just need to finish what fate started." },
+      { side:'left',  time:'18:11', text:"I’m a doctor, B. I save people,...not this" },
+      { side:'right', time:'18:12', text:"And yet Glady begged for help. Did anyone save her?" },
+      { side:'left',  time:'18:19', text:"You sound like you’ve thought about this for a long time." },
+      { side:'right', time:'18:20', text:"For years. Since the day I saw that purple mark on her face." },
+      { side:'right',  time:'18:22', text:"I still remember the way Stephanie ran." },
+      { side:'left', time:'18:23', text:"Then what do you want me to do?" },
+      { side:'right', time:'18:24', text:"Let's call" },
+      { side:'left', time:'18:24', text:"Voice call - 12 mins" },
+      { side:'right', time:'18:45', text:"We all lost someone, E." }
+    ]
+  }
+};
+
+
+let RB_SELECTED = 'bc';
+$(document).on('click', '.open-chat', function(){
+  RB_SELECTED = $(this).data('convo'); // 'bc' or 'be'
+});
+
+function rbRenderChat(key){
+  const c = RB_CONVOS[key] || RB_CONVOS.bc;
+
+  // Purple title shows ONLY the contact name
+  $('#rb-chat-title').text(c.title);
+
+  // Green header shows Name + the conversation Date EXACTLY as provided
+  $('#rb-chat-header-name').text(c.headerName);
+  $('#rb-chat-header-date').text(
+    (typeof c.headerDate === 'string' && c.headerDate.trim().length)
+      ? c.headerDate
+      : ''                                  // no auto "today" fallback
+  );
+
+  const $t = $('#rb-chat-thread').empty();
+  c.messages.forEach(m=>{
+    $t.append(
+      `<div class="bubble ${m.side}">
+         <p>${m.text}</p>
+         <span class="time">${m.time}</span>
+       </div>`
+    );
+  });
+  $t.scrollTop($t[0].scrollHeight);
+}
+
+
+$(document).on('pageshow', '#RBchatview', function(){
+  rbRenderChat(RB_SELECTED);
+});
+
+// Force jQM navigation to any internal “password” page
+$(document).on('click', 'a[href^="#"][href$="PASS"]', function (e) {
+  var target = $(this).attr('href');
+  if ($(target).length) {
+    e.preventDefault();
+    $.mobile.changePage(target);
+  }
+});
+
+// (Optional) Also ensure all internal anchors inside the Character list navigate
+$(document).on('click', '#charaevid a[href^="#"]', function (e) {
+  var target = $(this).attr('href');
+  if ($(target).length) {
+    e.preventDefault();
+    $.mobile.changePage(target);
+  }
+});
+
+
 </script>
 
-
 </body>
-
 </html>
