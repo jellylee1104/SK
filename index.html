@@ -34,8 +34,10 @@
     }
 
     .hide{
-        visibility: hidden;
+      visibility: hidden;
     }
+
+
 
     .info{
         height: 90%;
@@ -48,22 +50,41 @@
         display: none;
     }
 
+    #RAEVhide, #RBEVhide, #RCEVhide, #RDEVhide, #REEVhide, #RFEVhide{
+        display: none;
+    }
+
+    .rope{
+      width: 400px;
+      height:auto;
+    }
+
+    #rubbishbin{
+      width: 400px;
+      height: auto;
+    }
+
     h5, p{
         text-align: left;
     }
-    
+
     h5{
-        font-size: 17px;
+        font-size: 20px;
     }
 
     p{
-        font-size: 13px;
+        font-size: 17px;
     }
-   
+
+    #input{
+      background-color: #5d6066;
+    }
+
 </style>
 
 </head>
-
+<!--
+onload="stopBack();" -->
 <body>
 
     <!-- Content -->
@@ -368,7 +389,7 @@
           <h5>Timeline:</h5>
           <p>The gathering starts at 17:45</p>
           <p>17:12 – You arrived at the school with Stephanie and noticed that A and D had already arrived and played basketball. You guys went to the hall straight away to have a drink.</p>
-          <p>17:23 – Stephanie went to the toilet and you put “Womith” into her drink.</p>
+          <p>17:23 – Stephanie went to the toilet and you put “Womith” into her drink. You then throw the emty bottow into the rubbish bin</p>
           <p>17:27 – Stephanie came back, and she drank her drink with the poison.</p>
           <p>17:31 – F came and sat in another corner; however, she looked like she feared Stephanie and she start trembling uncontrollably when she see Stephanie.</p>
           <p>17:45 – The gathering starts and all of you go to the hall to watch the performance.</p>
@@ -423,7 +444,7 @@
           <h5>Timeline:</h5>
           <p>The gathering starts at 17:45</p>
           <p>17:31 – You arrived at the school and noticed that A, C and D had already arrived and playing basketball. You go straight to the hall to have a drink and see E and Stephanie; you start trembling uncontrollably.        </p>
-          <p>The gathering starts, and people go to the hall to watch the performance.</p>
+          <p>17:45 - The gathering starts, and people go to the hall to watch the performance.</p>
           <p>19:00 – End performance and a break for students and teachers to chat. You find teachers yourself.</p>
           <p>19:12 – You separate with A as she prepares for the murder by putting a rope to hang up in the ceiling.</p>
           <p>19:16 – She went back and continued to talk to teachers together.</p>
@@ -438,14 +459,14 @@
         </div>
     </div>
     <!--End of RF script page-->
-    
+
     <!--instruction1 page-->
     <div data-role="page" id='instruction1' data-theme = "b">
         <div data-role="header" class="header">
             <h1>Instruction</h1>
         </div>
         <div role="main" class="ui-content info" >
-          <h2>The time now is 20:00, 10 minutes ago you guys find that Stephanie is dead in the toilet. Hung up in the celling of the last toilet compartment and a purple water drop shape was drawn on her face, words such as “TOU KILLED ME!”, “YOU DON’T DESERVE WHAT YOU HAVE NOW!” are on the toilet door facing her. All of you are the suspects of murdering her. Now, everyone talk about your timeline since you came to school.</p>
+          <h2>The time now is 20:00, 10 minutes ago you guys find that Stephanie is dead in the toilet. Hung up in the celling of the last toilet compartment and a purple water drop shape was drawn on her face, words such as “YOU KILLED ME!”, “YOU DON’T DESERVE WHAT YOU HAVE NOW!” are on the toilet door facing her. All of you are the suspects of murdering her. Now, everyone talk about your timeline since you came to school.</p>
           <a href="#instruction2" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >Next</a>
         </div>
         <div data-role="footer" class="footer">
@@ -460,7 +481,7 @@
             <h1>Instruction</h1>
         </div>
         <div role="main" class="ui-content info" >
-            <h2>On the next page you will receive information of two scene, the hall and toilet. By this stage, you can only get information for one scene. You could not go back and choose the other one. <br><br> *Have a discussion on which scene so people going to each scene will be balance</h2>
+            <h2>On the next page you will receive information of two scene, the hall and toilet. By this stage, you can only get information for one scene. You could not go back and choose the other one. <br><br> *Have a discussion on which scene to examine so people going to each scene will be balance</h2>
           <a href="#scene" class="ui-btn ui-icon-carat-r ui-btn-icon-right" id="instrnext" >Next</a>
         </div>
         <div data-role="footer" class="footer">
@@ -501,20 +522,35 @@
     <div data-role="header" class="header">
         <h1>Toilet</h1>
         <a href="#toilet" class="ui-btn ui-icon-carat-l ui-btn-icon-left hide">Back</a>
-        <a href="#content" class="ui-btn ui-icon-carat-r ui-btn-icon-right">Next</a>
+        <a href="#instruction3" class="ui-btn ui-icon-carat-r ui-btn-icon-right">Next</a>
     </div>
     <div role="main" class="ui-content info" >
       <ul data-role="listview" data-inset="true">
          <li>
-                <button>
-                    <h1>Toilet</h1>
-                </button>
+          <a href="#toilet1" data-transition="slide">
+                    <h1>1</h1>
+          </a>
             </li>
          <li>
-                <a href="#hall" data-transition="slide">
-                    <h1>Hall</h1>
+                <a href="#toilet2" data-transition="slide">
+                    <h1>2</h1>
                 </a>
             </li>
+            <li>
+              <a href="#toilet3" data-transition="slide">
+                  <h1>3</h1>
+              </a>
+          </li>
+          <li>
+            <a href="#toilet4" data-transition="slide" class="hide">
+                <h1>4</h1>
+            </a>
+        </li>
+        <li>
+          <a href="#toilet5" data-transition="slide" class="hide">
+              <h1>5</h1>
+          </a>
+      </li>
       </ul>
     </div>
     <div data-role="footer" class="footer">
@@ -523,32 +559,380 @@
 </div>
 <!--  End of Toilet opinion page -->
 
-<!--   Hall opinion -->
-<div data-role="page" id='hall' data-theme = "b">
+<!-- Toilet1 opinion page -->
+<div data-role="page" id='toilet1' data-theme = "b">
     <div data-role="header" class="header">
         <h1>Toilet</h1>
-        <a href="#toilet" class="ui-btn ui-icon-carat-l ui-btn-icon-left hide">Back</a>
-        <a href="#content" class="ui-btn ui-icon-carat-r ui-btn-icon-right">Next</a>
+        <a href="#toilet" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
     </div>
     <div role="main" class="ui-content info" >
-      <ul data-role="listview" data-inset="true">
-         <li>
-                <button>
-                    <h1>Toilet</h1>
-                </button>
-            </li>
-         <li>
-                <a href="#hall" data-transition="slide">
-                    <h1>Hall</h1>
-                </a>
-            </li>
-      </ul>
-    </div>
+      <h2>Things in the rubish bin: </h2>
+      <p>- Some paper</p>
+      <p>- A black whiteboard pen</p>
+      <p>- A purple Lipstick</p>
     <div data-role="footer" class="footer">
         <h4>Copyright 2023</h4>
     </div>
 </div>
+</div>
+<!--  End of Toilet1 opinion page -->
+
+<!-- Toilet2 opinion page -->
+<div data-role="page" id='toilet2' data-theme = "b">
+  <div data-role="header" class="header">
+      <h1>Toilet</h1>
+      <a href="#toilet" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info" >
+    <h2>There are some faint yellow marks on the toilet's seat cover</h2>
+  <div data-role="footer" class="footer">
+      <h4>Copyright 2023</h4>
+  </div>
+</div>
+</div>
+<!--  End of Toilet2 opinion page -->
+
+<!-- Toilet3 opinion page -->
+<div data-role="page" id='toilet3' data-theme = "b">
+  <div data-role="header" class="header">
+      <h1>Toilet</h1>
+      <a href="#toilet" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info" >
+    <h2>The rope tied in the scene: </h2>
+    <a href="https://imgbb.com/"><img src="https://i.ibb.co/V3nHwnd/cover600-1.png" alt="cover600-1" class="rope"></a>
+  <div data-role="footer" class="footer">
+      <h4>Copyright 2023</h4>
+  </div>
+</div>
+</div>
+<!--  End of Toilet3 opinion page -->
+
+<!-- Toilet4 opinion page -->
+<div data-role="page" id='toilet4' data-theme = "b">
+  <div data-role="header" class="header">
+      <h1>Toilet</h1>
+      <a href="#toilet" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info" >
+    <h2>There is a CCTV in the corridor to the toilet, here are the timeline of people going in and out of the corridor:</h2>
+    <p>17:23 – Stephanie went to the toilet</p>
+    <p>17:27 – Stephanie left the toilet</p>
+    <p>19:00 – C went to the toilet</p>
+    <p>19:03 - C left the toilet</p>
+    <p>19:12 – A went to the toilet</p>
+    <p>19:15 – A left the toilet and B went to the toilet</p>
+    <p>19:18 - B left the toilet</p>
+    <p>19:20 - F went to the toilet</p>
+    <p>19:21 - D went to the toilet</p>
+    <p>19:24 – Stephanie and B in the coner of the corridor, B talked somethind and Stephanie looked scared</p>
+    <p>19:25 – Stephanie ran into the toilet and B went to the oppsite side. D and F left the toilet</p>
+    <p>19:35 – A and D went to the toilet together</p>
+    <p>19:37 – A and D went out of the toilet</p>
+    <p>19:41 - F went to the toilet</p>
+  <div data-role="footer" class="footer">
+      <h4>Copyright 2023</h4>
+  </div>
+</div>
+</div>
+<!--  End of Toilet4 opinion page -->
+
+<!-- Toilet5 opinion page -->
+<div data-role="page" id='toilet5' data-theme = "b">
+  <div data-role="header" class="header">
+      <h1>Toilet</h1>
+      <a href="#toilet" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info" >
+    <h2>Taking off her shoes, there are some black dot on it</h2>
+  <div data-role="footer" class="footer">
+      <h4>Copyright 2023</h4>
+  </div>
+</div>
+</div>
+<!--  End of Toilet5 opinion page -->
+
+<!--   Hall opinion -->
+<div data-role="page" id='hall' data-theme = "b">
+  <div data-role="header" class="header">
+      <h1>Hall</h1>
+      <a href="#hall" class="ui-btn ui-icon-carat-l ui-btn-icon-left hide">Back</a>
+      <a href="#instruction3" class="ui-btn ui-icon-carat-r ui-btn-icon-right">Next</a>
+  </div>
+  <div role="main" class="ui-content info" >
+    <ul data-role="listview" data-inset="true">
+       <li>
+        <a href="#hall1" data-transition="slide">
+                  <h1>1</h1>
+        </a>
+          </li>
+       <li>
+              <a href="#hall2" data-transition="slide">
+                  <h1>2</h1>
+              </a>
+          </li>
+          <li>
+            <a href="#hall3" data-transition="slide">
+                <h1>3</h1>
+            </a>
+        </li>
+        <li>
+          <a href="#hall4" data-transition="slide" >
+              <h1>4</h1>
+          </a>
+      </li>
+      <li>
+        <a href="#hall5" data-transition="slide" class="hide">
+            <h1>5</h1>
+        </a>
+    </li>
+    </ul>
+  </div>
+  <div data-role="footer" class="footer">
+      <h4>Copyright 2023</h4>
+  </div>
+</div>
 <!--  End of Hall opinion page -->
+
+<!-- Hall1 opinion page -->
+<div data-role="page" id='hall1' data-theme = "b">
+  <div data-role="header" class="header">
+      <h1>Hall</h1>
+      <a href="#hall" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info" >
+    <h1>This is the rubbish bin in the hall</h1>
+    <a href="https://ibb.co/wCpT9vn"><img id="rubbishbin" src="https://i.ibb.co/XpF9hwn/Screenshot-2023-11-11-at-18-36-51.png" alt="Screenshot-2023-11-11-at-18-36-51" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'></a><br />
+  <div data-role="footer" class="footer">
+      <h4>Copyright 2023</h4>
+  </div>
+</div>
+</div>
+<!--  End of Hall1 opinion page -->
+
+<!-- Hall2 opinion page -->
+<div data-role="page" id='hall2' data-theme = "b">
+<div data-role="header" class="header">
+    <h1>Hall</h1>
+    <a href="#hall" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+</div>
+<div role="main" class="ui-content info" >
+  <h2>There is a CCTV beside the door to see who came in and went out</h2>
+  <p>17:12 – E & Stepanie arrived</p>
+  <p>17:23 – Stephanie left </p>
+  <p>17:27 – Stephanie came back</p>
+  <p>17:31 - F arrived</p>
+  <p>17:45 – A, B, C, D arrived</p>
+  <p>19:00 – All went out</p>
+  <p>19:45 - ( B, E ) ( F ) ( A,D ) went back</p>
+  <p> * ( ) are back together</p>
+<div data-role="footer" class="footer">
+    <h4>Copyright 2023</h4>
+</div>
+</div>
+</div>
+<!--  End of Hall2 opinion page -->
+
+<!-- Hall3 opinion page -->
+<div data-role="page" id='hall3' data-theme = "b">
+<div data-role="header" class="header">
+    <h1>Hall</h1>
+    <a href="#hall" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+</div>
+<div role="main" class="ui-content info" >
+  <h2>The rope tied in the scene: </h2>
+  <a href="https://imgbb.com/"><img src="https://i.ibb.co/V3nHwnd/cover600-1.png" alt="cover600-1" class="rope"></a>
+<div data-role="footer" class="footer">
+    <h4>Copyright 2023</h4>
+</div>
+</div>
+</div>
+<!--  End of Hall3 opinion page -->
+
+<!-- Hall4 opinion page -->
+<div data-role="page" id='hall4' data-theme = "b">
+  <div data-role="header" class="header">
+      <h1>Hall</h1>
+      <a href="#hall" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+  </div>
+  <div role="main" class="ui-content info" >
+    <br>
+    <input type="text" id="input">
+    <button onclick="search()">search</button>
+    <div id="text"></div>
+    <div data-role="footer" class="footer">
+      <h4>Copyright 2023</h4>
+  </div>
+  </div>
+  </div>
+<!--  End of Hall4 opinion page -->
+
+<!-- Hall5 opinion page -->
+<div data-role="page" id='hall5' data-theme = "b">
+<div data-role="header" class="header">
+    <h1>Toilet</h1>
+    <a href="#toilet" class="ui-btn ui-icon-carat-l ui-btn-icon-left">Back</a>
+</div>
+<div role="main" class="ui-content info" >
+  <h2>Taking off her shoes, there are some black dot on it</h2>
+<div data-role="footer" class="footer">
+    <h4>Copyright 2023</h4>
+</div>
+</div>
+</div>
+<!--  End of Hall5 opinion page -->
+
+
+
+<!--instruction3 page-->
+<div data-role="page" id='instruction3' data-theme = "b">
+  <div data-role="header" class="header">
+      <h1>Instruction</h1>
+  </div>
+  <div role="main" class="ui-content info" >
+    <h2>Now you have got some information form the scence, please have a discussion to see what you have find in these scence to understand what happen more.</h2>
+    <a href="#instruction4" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >Done</a>
+  </div>
+  <div data-role="footer" class="footer">
+      <h4>Copyright 2023</h4>
+  </div>
+</div>
+<!--End of instruction3 page-->
+
+<!--instruction4 page-->
+<div data-role="page" id='instruction4' data-theme = "b">
+  <div data-role="header" class="header">
+      <h1>Instruction</h1>
+  </div>
+  <div role="main" class="ui-content info" >
+    <h2>Now, each person is going to find evidence for another character (using the same password as the start):</h2>
+    <p>A (firefigher) look at information for B (psychologist)</p>
+    <p>B (psychologist) look at information for C (dancer)</p>
+    <p>C (dancer) look at information for D (Chef)</p>
+    <p>D (Chef) look at information for E (Doctor)</p>
+    <p>E (Doctor) look at information for F (Accountant)</p>
+    <p>F (Accountant) look at information for A (Firefighter)</p>
+    <h2>*Everyone can assess Stephanie's profile*</h2>
+    <a href="#charaevid" class="ui-btn ui-icon-carat-r ui-btn-icon-right" >Next</a>
+  </div>
+  <div data-role="footer" class="footer">
+      <h4>Copyright 2023</h4>
+  </div>
+</div>
+<!--End of instruction4 page-->
+
+<!--   Character evidence -->
+<div data-role="page" id='charaevid' data-theme = "b">
+  <div data-role="header" class="header">
+      <h1>Character:</h1>
+      <a href="#toilet" class="ui-btn ui-icon-carat-l ui-btn-icon-left hide">Back</a>
+  </div>
+  <div role="main" class="ui-content info" >
+    <ul data-role="listview" data-inset="true">
+       <li>
+              <a href="#RAEVPASS" data-transition="slide">
+                  <h1>A - evidence</h1>
+                  <p>firefigher</p>
+              </a>
+          </li>
+       <li>
+              <a href="#RBEVPASS" data-transition="slide">
+                  <h1>B - evidence</h1>
+                  <p>Psychologist</p>
+              </a>
+          </li>
+        <li>
+            <a href="#RCEVPASS" data-transition="slide">
+                <h1>C - evidence</h1>
+                <p>Dancer</p>
+            </a>
+        </li>
+        <li>
+          <a href="#RDEVPASS" data-transition="slide">
+              <h1>D - evidence</h1>
+              <p>Chef</p>
+          </a>
+      </li>
+      <li>
+        <a href="#REEVPASS" data-transition="slide">
+            <h1>E - evidence</h1>
+            <p>Doctor</p>
+        </a>
+    </li>
+    <li>
+      <a href="#RFEVPASS" data-transition="slide">
+          <h1>F - evidence</h1>
+          <p>Accountant</p>
+      </a>
+  </li>
+    </ul>
+  </div>
+  <div data-role="footer" class="footer">
+      <h4>Copyright 2023</h4>
+  </div>
+</div>
+<!--  End of character evidence page -->
+
+<!--RAEV password page-->
+<div data-role="page" id="RAEVPASS" data-theme = "b">
+  <div data-role="header" class="header">
+      <h1>Role A evidence - Firefighter</h1>
+  </div>
+
+  <div role="main" class="ui-content info" >
+      <h3 class="RAEVpass">Type your password:</h3>
+      <input type="number" class="RApass" id="RAEVpassword">
+      <button class="ui-btn" cEVlass="RAEVpass" onclick="RAEVsub()">submit</button>
+      <a href="#RAevid" class="ui-btn" data-transition="pop" id="RAEVhide">Next</a>
+      <a href="#charaevid" class="ui-btn" data-transition="pop">Back to Home</a>
+  </div>
+
+  <div data-role="footer" class="footer">
+      <h4>Copyright 2023</h4>
+  </div>
+</div>
+<!--End of RAEV password page-->
+
+<!--   RAevid page -->
+<div data-role="page" id='RAevid' data-theme = "b">
+  <div data-role="header" class="header">
+      <h1>A - Firefighter</h1>
+      <a href="#charaevid" class="ui-btn ui-icon-carat-l ui-btn-icon-left hide">Back</a>
+  </div>
+  <div role="main" class="ui-content info" >
+    <ul data-role="listview" data-inset="true">
+       <li>
+              <a href="#RAevid1ga" data-transition="slide">
+                  <h1>1</h1>
+              </a>
+          </li>
+       <li>
+              <a href="#RAevid2ga" data-transition="slide">
+                  <h1>2</h1>
+              </a>
+          </li>
+       <li>
+            <a href="#RAevid3ga" data-transition="slide">
+                <h1>3</h1>
+            </a>
+        </li>
+        <li>
+          <a href="#RAevid4ga" data-transition="slide">
+              <h1>4</h1>
+          </a>
+      </li>
+    </ul>
+  </div>
+  <div data-role="footer" class="footer">
+      <h4>Copyright 2023</h4>
+  </div>
+</div>
+<!--  End of RAevid page -->
+
+
+
+
+
 
 
 <script>
@@ -562,7 +946,7 @@ function RAsub() {
   }else if(RApassword == RArightpass){
     RAhide.style.display = "block";
   }else {
-    alert("Wrong password"); 
+    alert("Wrong password");
   }
 }
 
@@ -575,7 +959,7 @@ function RBsub() {
   }else if(RBpassword == RBrightpass){
     RBhide.style.display = "block";
   }else {
-    alert("Wrong password"); 
+    alert("Wrong password");
   }
 }
 
@@ -588,7 +972,7 @@ function RCsub() {
   }else if(RCpassword == RCrightpass){
     RChide.style.display = "block";
   }else {
-    alert("Wrong password"); 
+    alert("Wrong password");
   }
 }
 
@@ -601,7 +985,7 @@ function RDsub() {
   }else if(RDpassword == RDrightpass){
     RDhide.style.display = "block";
   }else {
-    alert("Wrong password"); 
+    alert("Wrong password");
   }
 }
 
@@ -614,7 +998,7 @@ function REsub() {
   }else if(REpassword == RErightpass){
     REhide.style.display = "block";
   }else {
-    alert("Wrong password"); 
+    alert("Wrong password");
   }
 }
 
@@ -627,10 +1011,34 @@ function RFsub() {
   }else if(RFpassword == RFrightpass){
     RFhide.style.display = "block";
   }else {
-    alert("Wrong password"); 
+    alert("Wrong password");
   }
 }
 
+function search(){
+  var input = document.getElementById("input").innerHTML;
+  var text = document.getElementById("text");
+  if(input == 'Womith'){
+    text.innerHTML = "<p>Last night, I slept in my friend's house, but the next day I was at a lonely island!</p>";
+  }
+}
+
+// function stopBack() {
+//          window.history.go(1);
+//       }
+
+function RAEVsub() {
+    var RAEVhide = document.getElementById("RAEVhide");
+    var RAEVpassword = document.getElementById("RAEVpassword").value;
+    var RAEVrightpass = '2198';
+  if(RAEVpassword ==''){
+    alert("Please input your password");
+  }else if(RAEVpassword == RAEVrightpass){
+    RAEVhide.style.display = "block";
+  }else {
+    alert("Wrong password");
+  }
+}
 
 </script>
 
